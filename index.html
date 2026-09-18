@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Budget Tracker</title>
+  
+  <!-- Corrected Google Fonts Integration -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Card 1: Page Heading Section -->
+  <header class="main-header">
+    <img src="cash-money-logo-design-concept_761413-7125.avif" alt="Budget Tracker Logo">
+    <h1>Budget Tracker</h1>
+  </header>
+
+  <main class="dashboard-container">
+
+    <!-- Collapsible Help Banner -->
+    <section class="info-section">
+      <details>
+        <summary>How to use this tracker</summary>
+        <p>Use the form below to input your daily expenses. The table updates automatically to keep your finances organized.</p>
+      </details>
+    </section>
+
+    <!-- Card 2: Form Section -->
+    <section class="add-expense-section">
+      <h2>Add New Expense</h2>
+      <form id="budget-form">
+        
+        <div class="form-group">
+          <label for="expense-name">Expense Name:</label>
+          <input type="text" id="expense-name" placeholder="e.g., Supermarket Groceries" required>
+        </div>
+
+        <div class="form-group">
+          <label for="expense-amount">Amount (KSh):</label>
+          <input type="number" id="expense-amount" placeholder="e.g., 2500" required>
+        </div>
+
+        <div class="form-group">
+          <label for="expense-category">Category:</label>
+          <select id="expense-category" required>
+            <option value="" disabled selected>Select a category</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Rent">Rent</option>
+            <option value="Entertainment">Entertainment</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="expense-date">Date:</label>
+          <input type="date" id="expense-date" required>
+        </div>
+
+        <button type="submit">Add Expense</button>
+      </form>
+    </section>
+
+    <!-- Card 3: Expense Table Section -->
+    <section class="table-section">
+      <h2>Expense Logs Matrix</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Supermarket Groceries</td>
+            <td>KSh 4,500.00</td>
+            <td>Food</td>
+            <td>2026-09-12</td>
+          </tr>
+          <tr>
+            <td>Fuel Refill</td>
+            <td>KSh 3,200.00</td>
+            <td>Transport</td>
+            <td>2026-09-13</td>
+          </tr>
+          <tr>
+            <td>Monthly Apartment Rent</td>
+            <td>KSh 25,000.00</td>
+            <td>Rent</td>
+            <td>2026-09-01</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+</body>
+</html>

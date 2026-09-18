@@ -1,0 +1,191 @@
+/* ==========================================
+   1. GLOBAL RESET & DESIGN VARIABLES
+   ========================================== */
+* {
+  box-sizing: border-box; /* Fixed: Prevents spacing from breaking width values */
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* Intentional Color Palette System */
+  --bg-color: #f8fafc;         /* Modern, clean layout canvas shade */
+  --card-bg: #ffffff;          /* White canvas for card panels */
+  --primary-theme: #D231A0;    /* Interactive focus brand color */
+  --primary-hover: #b02484;    /* Subtle dark-shifted variant for interaction feedback */
+  --text-dark: #1e293b;        /* Crisp deep slate for optimal headings contrast */
+  --text-body: #475569;        /* Soft charcoal for legible descriptive texts */
+  --border-light: #e2e8f0;     /* Muted dividing lines */
+  --zebra-stripe: #f1f5f9;     /* Easy data-scanning alternating row backgrounds */
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: 'Merriweather', serif; /* Optimized body typography for digits reading comfort */
+  line-height: 1.5; /* Proper vertical rhythm standard */
+  color: var(--text-body);
+  padding: 40px 20px;
+  max-width: 760px; /* Centers and stabilizes layout width across desktop screens */
+  margin: 0 auto;
+}
+
+/* ==========================================
+   2. TYPOGRAPHY DESIGN HIERARCHY
+   ========================================== */
+h1, h2, summary, th {
+  font-family: 'Montserrat', sans-serif; /* High-end, structured modern headings look */
+  color: var(--text-dark);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================
+   3. BOX MODEL CARDS SYSTEM
+   ========================================== */
+.main-header, 
+.info-section, 
+.add-expense-section,
+.table-section {
+  background-color: var(--card-bg);
+  padding: 26px 32px; /* Generous internal padding clearance */
+  margin-bottom: 24px; /* Distinct layout section separation margin layout */
+  border: 1px solid var(--border-light);
+  border-radius: 12px; /* Smooth rounded card styling appearance */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Modern card elevation shadows */
+}
+
+/* Custom alignment inside structural header card */
+.main-header {
+  text-align: center;
+  border-top: 6px solid var(--primary-theme); /* Highlights primary color strip right at the top */
+}
+
+.main-header img {
+  max-width: 65px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.main-header h1 {
+  font-size: 2.2rem;
+}
+
+/* Collapsible Instruction UI Elements */
+details {
+  cursor: pointer;
+}
+
+summary {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.info-section p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+
+/* Card Section Headers */
+h2 {
+  font-size: 1.35rem;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border-light);
+}
+
+/* ==========================================
+   4. FORM ELEMENTS STYLING
+   ========================================== */
+#budget-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Balanced grouping gaps */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+input, select {
+  font-family: 'Merriweather', serif;
+  font-size: 0.95rem;
+  padding: 12px 14px; /* Perfect desktop touch targets size height */
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  background-color: #fafbfc;
+  color: var(--text-dark);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Active focus feedback highlighting states when user selects input */
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary-theme);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(210, 49, 160, 0.12);
+}
+
+/* Action Form Submission Button Controls */
+button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--primary-theme);
+  padding: 14px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer; /* Pointer hand cursor icon signaling interactive targets */
+  transition: background-color 0.2s ease;
+  margin-top: 6px;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ==========================================
+   5. EXPENSE TABLES DESIGN RULES
+   ========================================== */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Merges data borders flush with frame tracks */
+  margin-top: 8px;
+}
+
+th {
+  background-color: #f8fafc;
+  color: var(--text-dark);
+  text-align: left;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase; /* Standard layout look for financial logs */
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--border-light);
+}
+
+td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.9rem;
+}
+
+/* Zebra Stripes rows rules for reading scanning balance adjustments */
+tbody tr:nth-child(even) {
+  background-color: var(--zebra-stripe);
+}
+
+/* Subtle tracker hover response layout highlighting */
+tbody tr:hover {
+  background-color: rgba(210, 49, 160, 0.02);
+}
